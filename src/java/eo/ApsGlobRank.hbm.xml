@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 6, 2021 9:03:39 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="eo.ApsGlobRank" table="aps_glob_rank" catalog="school_mgt_db" optimistic-lock="version">
+        <id name="rankid" type="java.lang.Integer">
+            <column name="RANKID" />
+            <generator class="identity" />
+        </id>
+        <property name="descr" type="string">
+            <column name="DESCR" length="300" />
+        </property>
+        <set name="apsAdmAdms" table="aps_adm_adm" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="RANKID" not-null="true" />
+            </key>
+            <one-to-many class="eo.ApsAdmAdm" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>APSAC MIS</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top" class="top">
+            <ui:insert name="top">
+                <table columns="3" width="100%">
+                    <tr>
+                        <td width="20%" valign="bottom" align="left">
+                             <p:graphicImage width="100" value="#{resource['img:aps-logo.png']}" />
+                           
+                        </td>
+                        <td width="60%" valign="bottom" align="center">
+                            <h:outputText value="APSAC" style="font-size: xx-large; font-weight: bolder; font-family: cursive"/><br />
+                            <h:outputText value="MANAGEMENT INFORMATION SYSTEM" style="font-size: xx-large; font-weight: bolder; font-family: cursive"/><br />
+                        </td>
+                        <td width="20%" valign="bottom" align="right">
+                            <p:graphicImage width="150" value="#{resource['img:HD logo.png']}" />
+                            <h:form id="signout">
+                                Welcome <b>#{request.remoteUser}</b> <p:spacer width="25" />  <p:commandLink ajax="false" value="Sign Out" action="#{Bean_ApsPanel.invalidateSession}" style="font-weight: bold" /><br /><p:commandLink value="change password" action="SecUser_Edit" /> 
+                            </h:form>
+                        </td>
+                    </tr>
+                </table>
+                <h:form>
+                    <p:megaMenu>
+                        <p:submenu label="Admission Section">
+                            <p:column>
+                                <p:submenu label="Establishment">
+                                    <p:menuitem value="Pay Scale" action="HrmPayscales_View" />
+                                    <p:menuitem value="General Appointment" action="HrmApptGeneral_View" />
+                                    <p:menuitem value="Technical Appointment" action="HrmApptTechnical_View" />
+                                    <p:menuitem value="Regions" action="HrmRegions_View" />
+                                </p:submenu>
+                            </p:column>
+                        </p:submenu>
+                        <p:submenu label="Fee Sec">
+                            <p:column>
+                                <p:submenu label="Establishment">
+                                    <p:menuitem value="Pay Scale" action="HrmPayscales_View" />
+                                    <p:menuitem value="General Appointment" action="HrmApptGeneral_View" />
+                                    <p:menuitem value="Technical Appointment" action="HrmApptTechnical_View" />
+                                    <p:menuitem value="Regions" action="HrmRegions_View" />
+                                </p:submenu>
+                            </p:column>
+                        </p:submenu>
+                        <p:submenu label="Human Resource">
+                            <p:column>
+                                <p:submenu label="Establishment">
+                                    <p:menuitem value="Pay Scale" action="HrmPayscales_View" />
+                                    <p:menuitem value="General Appointment" action="HrmApptGeneral_View" />
+                                    <p:menuitem value="Technical Appointment" action="HrmApptTechnical_View" />
+                                    <p:menuitem value="Regions" action="HrmRegions_View" />
+                                </p:submenu>
+                            </p:column>
+                        </p:submenu>
+                        <p:submenu label="Store">
+                            <p:column>
+                                <p:submenu label="Establishment">
+                                    <p:menuitem value="Pay Scale" action="HrmPayscales_View" />
+                                    <p:menuitem value="General Appointment" action="HrmApptGeneral_View" />
+                                    <p:menuitem value="Technical Appointment" action="HrmApptTechnical_View" />
+                                    <p:menuitem value="Regions" action="HrmRegions_View" />
+                                </p:submenu>
+                            </p:column>
+                        </p:submenu>
+                        <p:submenu label="Settings">
+                            <p:column>
+                                <p:submenu label="Configurations">
+                                    <p:menuitem value="Add Panel" action="Configurations/adms_panel" />
+                                    <p:menuitem value="Add Session" action="Configurations/adms_sessions" />
+                                    <p:menuitem value="Add Class" action="Configurations/glob_class" />
+                                     <p:menuitem value="Add Gender" action="Configurations/glob_gender" />
+                                      <p:menuitem value="Add Corp Regt" action="Configurations/adms_corp" />
+                                       <p:menuitem value="Add Institutes" action="Configurations/adms_Institutes" />
+                                        <p:menuitem value="Add Nationality" action="Configurations/adms_nationality" />
+                                        <p:menuitem value="Add Profession" action="Configurations/adms_prof" />
+                                        <p:menuitem value="Add Province" action="Configurations/adms_prov" />
+                                        <p:menuitem value="Add Ranks" action="Configurations/adms_rank" />
+                                        <p:menuitem value="Add Religion" action="Configurations/adms_religion" />
+                                        <p:menuitem value="Add Section" action="Configurations/adms_section" />
+                                </p:submenu>
+                            </p:column>
+                        </p:submenu>
+                    </p:megaMenu>
+<!--                    <p:megaMenu rendered="#{request.isUserInRole('AppAdmin')}">
+                        <p:submenu label="Human Resource">
+                            <p:column>
+                                <p:submenu label="Establishment">
+                                    <p:menuitem value="Pay Scale" action="HrmPayscales_View" />
+                                    <p:menuitem value="General Appointment" action="HrmApptGeneral_View" />
+                                    <p:menuitem value="Technical Appointment" action="HrmApptTechnical_View" />
+                                    <p:menuitem value="Regions" action="HrmRegions_View" />
+                                </p:submenu>
+                            </p:column>
+                        </p:submenu>
+                        <p:submenu label="Supply Chain">
+                            <p:column>
+                                <p:submenu label="Producer">
+                                    <p:menuitem value="Supplier" action="ScmSupplier_View" />
+                                </p:submenu>
+                            </p:column>
+                            <p:column>
+                                <p:submenu label="Inventory">
+                                    <p:menuitem value="Category" action="ScmCategory_View" />
+                                    <p:menuitem value="Product" action="ScmProduct_View" />
+                                </p:submenu>
+                            </p:column>
+                            <p:column>
+                                <p:submenu label="Consumer">
+                                    <p:menuitem value="Order Status" action="ScmOrderStatus_View" />
+                                    <p:menuitem value="Customer" action="ScmCustomer_View" />
+                                    <p:menuitem value="Shipper" action="ScmShipper_View" />
+                                </p:submenu>
+                            </p:column>
+                        </p:submenu>
+                        <p:submenu label="Financial Accounting">
+                            <p:column>
+                                <p:submenu label="Financials">
+                                    <p:menuitem value="Account Groups" action="FinGroups_View" />
+                                    <p:menuitem value="Chart of Accounts" action="FinChartofaccounts_View" />
+                                    <p:menuitem value="Fiscal Period" action="FinPeriod_View" />
+                                </p:submenu>
+                            </p:column>
+                        </p:submenu>
+                    </p:megaMenu>-->
+
+
+                    <p:megaMenu rendered="#{request.isUserInRole('AppManager')}">
+                        <p:submenu label="Human Resource">
+                            <p:column>
+                                <p:submenu label="Establishment">
+                                    <p:menuitem value="Employee" action="HrmEmployee_View" />
+                                </p:submenu>
+                            </p:column>
+                        </p:submenu>
+                        <p:submenu label="Supply Chain">
+                            <p:column>
+                                <p:submenu label="Order Booking">
+                                    <p:menuitem value="Purchase Order" action="ScmOrderMaster_View" />
+                                    <p:menuitem value="Order Details" action="ScmOrderDetail_View" />
+                                </p:submenu>
+                            </p:column>
+                            <p:column>
+                                <p:submenu label="Point of Sale">
+                                    <p:menuitem value="Daily Sales" action="ScmSales_View" />
+                                </p:submenu>
+                            </p:column>
+                        </p:submenu>
+                        <p:submenu label="Financial Accounting">
+                            <p:column>
+                                <p:submenu label="Transactions">
+                                    <p:menuitem value="General Ledger" action="FinGenledger_View" />
+                                </p:submenu>
+                            </p:column>
+                            <p:column>
+                                <p:submenu label="Reports">
+                                    <p:menuitem value="Balance Sheet" action="#" />
+                                    <p:menuitem value="Income Statement" action="#" />
+                                    <p:menuitem value="Cash Flow Statement" action="#" />
+                                    <p:menuitem value="Summary for Taxation" action="#" />
+                                </p:submenu>
+                            </p:column>
+                        </p:submenu>
+                    </p:megaMenu>
+
+                </h:form>
+            </ui:insert>
+        </div>
+        <div>
+            <div id="content" class="left_content">
+                <ui:insert name="content">Content</ui:insert>
+            </div>
+        </div>
+    </h:body>
+
+</html>

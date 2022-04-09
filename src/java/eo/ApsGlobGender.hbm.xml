@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 6, 2021 9:03:39 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="eo.ApsGlobGender" table="aps_glob_gender" catalog="school_mgt_db" optimistic-lock="version">
+        <id name="genderid" type="java.lang.Integer">
+            <column name="GENDERID" />
+            <generator class="identity" />
+        </id>
+        <property name="descr" type="string">
+            <column name="DESCR" length="300" />
+        </property>
+        <property name="isStudent" type="java.lang.Integer">
+            <column name="IS_STUDENT" />
+        </property>
+        <property name="isEmp" type="java.lang.Integer">
+            <column name="IS_EMP" />
+        </property>
+        <set name="apsAdmAdms" table="aps_adm_adm" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="GENDERID" not-null="true" />
+            </key>
+            <one-to-many class="eo.ApsAdmAdm" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="master.xhtml">
+
+    <ui:define name="content">
+       
+         <p:panel id="horizontal" header="Message by Principal" toggleable="true" toggleOrientation="horizontal">
+        <h:panelGrid columns="2" cellpadding="10">
+           
+            <p:graphicImage value="#{resource['img/principal.jpg']}" title="Save Data" />
+            <h:outputText value="Welcome to APSACS FORT ROAD, the latest addition to the illustrious family of APSACS. In the span of Six years our institution – an efflorescent sapling-  has captured a dignified stature among the seasoned academic institutions of the country. We are moving forward with the vision of securing the invaluable asset of society, students, and providing them an environment conducive to the growth of wholesome personality. The spirit of our philosophy is to infuse an intellectual curiosity, analytical thinking and problem solving ability in the students to let them identify their real worth in the society and deal the world with their own unique perspective.
+Our school practically demonstrates its role in the grooming of the student with a receptive gesture towards national and international competitions. Students avail numerous exciting opportunities to display their latent potential by thinking aesthetically, analytically and creatively, in the country and abroad. Students are achieving heights of academic excellence under the supervision of competent and devoted faculty. The school has launched a scholarship program and laurels as an incentive to talented young scholar. More over we have established an effective communicative approach with the parents to strengthen the teacher-student- parent triangle, for an effective teaching learning process.
+Having a futuristic insight, we are determined to bring up a patriotic youth who could share his part in worldwide scientific and technological development by keeping alive the true spirit of Islam. We welcome you all to join our caravan of academic prosperity and fertility to the zenith of success and achievement.Come and strengthen our hands to let our youth “Rise and Shine”. Allah be with us all." />
+        </h:panelGrid>
+             
+             
+           
+    </p:panel>
+        
+          <center>   
+              <p:graphicImage width="900px" height="400px"  value="#{resource['img/building.png']}" title="Image" />
+          </center>
+       
+    </ui:define>
+
+</ui:composition>

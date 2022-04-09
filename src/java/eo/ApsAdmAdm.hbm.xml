@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 6, 2021 9:03:39 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="eo.ApsAdmAdm" table="aps_adm_adm" catalog="school_mgt_db" optimistic-lock="version">
+        <id name="admId" type="java.lang.Integer">
+            <column name="adm_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="apsAdmsPanel" class="eo.ApsAdmsPanel" fetch="select">
+            <column name="PANELID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="apsAdmsSession" class="eo.ApsAdmsSession" fetch="select">
+            <column name="SESSIONID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="apsGlobClassBySibling2Class" class="eo.ApsGlobClass" fetch="select">
+            <column name="SIBLING2_CLASS" />
+        </many-to-one>
+        <many-to-one name="apsGlobClassByClsid" class="eo.ApsGlobClass" fetch="select">
+            <column name="CLSID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="apsGlobClassByAdmsForClass" class="eo.ApsGlobClass" fetch="select">
+            <column name="ADMS_FOR_CLASS" />
+        </many-to-one>
+        <many-to-one name="apsGlobClassBySibling1Class" class="eo.ApsGlobClass" fetch="select">
+            <column name="SIBLING1_CLASS" />
+        </many-to-one>
+        <many-to-one name="apsGlobCorpsregt" class="eo.ApsGlobCorpsregt" fetch="select">
+            <column name="CORPSREGTID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="apsGlobGender" class="eo.ApsGlobGender" fetch="select">
+            <column name="GENDERID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="apsGlobInstitutes" class="eo.ApsGlobInstitutes" fetch="select">
+            <column name="INSTID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="apsGlobNationality" class="eo.ApsGlobNationality" fetch="select">
+            <column name="NATID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="apsGlobProf" class="eo.ApsGlobProf" fetch="select">
+            <column name="PROFESSIONID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="apsGlobProv" class="eo.ApsGlobProv" fetch="select">
+            <column name="PROVINCEID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="apsGlobRank" class="eo.ApsGlobRank" fetch="select">
+            <column name="RANKID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="apsGlobReligion" class="eo.ApsGlobReligion" fetch="select">
+            <column name="RELID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="apsGlobSecBySibling2Sec" class="eo.ApsGlobSec" fetch="select">
+            <column name="SIBLING2_SEC" />
+        </many-to-one>
+        <many-to-one name="apsGlobSecBySibling1Sec" class="eo.ApsGlobSec" fetch="select">
+            <column name="SIBLING1_SEC" />
+        </many-to-one>
+        <property name="srno" type="string">
+            <column name="SRNO" length="200" not-null="true" />
+        </property>
+        <property name="hsscPremed" type="java.lang.Character">
+            <column name="HSSC_PREMED" length="1" />
+        </property>
+        <property name="hsscPreengg" type="java.lang.Character">
+            <column name="HSSC_PREENGG" length="1" />
+        </property>
+        <property name="hsscIcs" type="java.lang.Character">
+            <column name="HSSC_ICS" length="1" />
+        </property>
+        <property name="photograph" type="string">
+            <column name="PHOTOGRAPH" length="300" />
+        </property>
+        <property name="credate" type="timestamp">
+            <column name="CREDATE" length="19" not-null="true" />
+        </property>
+        <property name="status" type="int">
+            <column name="STATUS" not-null="true" />
+        </property>
+        <property name="userid" type="int">
+            <column name="USERID" not-null="true" />
+        </property>
+        <property name="nameInFull" type="string">
+            <column name="NAME_IN_FULL" length="300" not-null="true" />
+        </property>
+        <property name="fname" type="string">
+            <column name="FNAME" length="300" not-null="true" />
+        </property>
+        <property name="fcnic" type="string">
+            <column name="FCNIC" length="300" not-null="true" />
+        </property>
+        <property name="dob" type="date">
+            <column name="DOB" length="10" not-null="true" />
+        </property>
+        <property name="markofid" type="int">
+            <column name="MARKOFID" not-null="true" />
+        </property>
+        <property name="teloff" type="string">
+            <column name="TELOFF" length="500" not-null="true" />
+        </property>
+        <property name="mob" type="string">
+            <column name="MOB" length="500" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="200" not-null="true" />
+        </property>
+        <property name="addrPostal" type="string">
+            <column name="ADDR_POSTAL" length="500" not-null="true" />
+        </property>
+        <property name="pgname" type="string">
+            <column name="PGNAME" length="500" />
+        </property>
+        <property name="pgcnic" type="string">
+            <column name="PGCNIC" length="500" />
+        </property>
+        <property name="presentOffice" type="string">
+            <column name="PRESENT_OFFICE" length="500" />
+        </property>
+        <property name="addrHome" type="string">
+            <column name="ADDR_HOME" length="500" />
+        </property>
+        <property name="addrPgpostal" type="string">
+            <column name="ADDR_PGPOSTAL" length="500" />
+        </property>
+        <property name="teloffPg" type="string">
+            <column name="TELOFF_PG" length="200" />
+        </property>
+        <property name="mobPg" type="string">
+            <column name="MOB_PG" length="200" />
+        </property>
+        <property name="emailPg" type="string">
+            <column name="EMAIL_PG" length="200" />
+        </property>
+        <property name="addrPerm" type="string">
+            <column name="ADDR_PERM" length="500" />
+        </property>
+        <property name="dname" type="string">
+            <column name="DNAME" length="200" />
+        </property>
+        <property name="dcnic" type="string">
+            <column name="DCNIC" length="200" />
+        </property>
+        <property name="dtel" type="string">
+            <column name="DTEL" length="200" />
+        </property>
+        <property name="dmob" type="string">
+            <column name="DMOB" length="200" />
+        </property>
+        <property name="vehno" type="string">
+            <column name="VEHNO" length="200" />
+        </property>
+        <property name="erContactno" type="string">
+            <column name="ER_CONTACTNO" length="200" />
+        </property>
+        <property name="erContactname" type="string">
+            <column name="ER_CONTACTNAME" length="200" />
+        </property>
+        <property name="sibling1Name" type="string">
+            <column name="SIBLING1_NAME" length="100" />
+        </property>
+        <property name="sibling2Name" type="string">
+            <column name="SIBLING2_NAME" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

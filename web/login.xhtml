@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>APSAC Fort Road</title>
+    </h:head>
+    <h:body style="background-color: whitesmoke" >
+        
+         <p:ajaxStatus onstart="PF('statusDialog').show()" oncomplete="PF('statusDialog').hide()" onerror="alert('Please try again error')" />
+                                <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+                                    <p:graphicImage value="#{resource['img:working.gif']}" />
+                                </p:dialog>
+         
+        <table width="100%">
+           
+            <tr>
+                <td bgcolor="Silver" height="41" align="right" colspan="3">
+                © All copyrights reserved by HQ NLC ICT Br (SW Section) &nbsp;&nbsp;
+                </td>
+            </tr>
+            
+            <tr>
+                <td valign="top" align="center">
+                    <img align="center" src="#{resource['img:aps-logo.png']}" alt=""/> <br />
+                    <img align="center" src="#{resource['img:logo.PNG']}" alt=""/> <br />
+                    <h:outputText value="APSAC" style="font-family:Arial, Helvetica, sans-serif; font-size:xx-large; font-weight:bold; color: green" /> <p:spacer width="10" />   <h:outputText value="MIS" style="font-family:Arial, Helvetica, sans-serif; font-size:xx-large; font-weight:bold; color: darkorange" />
+                    <h:form id="loginForm" onsubmit="document.getElementById('loginForm').action = 'j_security_check';" prependId="false">                
+                        <p:panelGrid columns="2">
+                            <h:outputLabel value="Username" for="j_username" />
+                            <h:inputText id="j_username" />
+                            <h:outputLabel value="Password" for="j_password" />
+                            <h:inputSecret id="j_password"  />
+                            <p:spacer />
+                            <h:commandButton onclick="PF('statusDialog').show();" value="Sign In" type="submit" />
+                        </p:panelGrid>
+                    </h:form>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3" height="30%"></td>
+            </tr>
+        </table>
+
+    </h:body>
+</html>
+

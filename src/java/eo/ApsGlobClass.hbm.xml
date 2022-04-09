@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 6, 2021 9:03:39 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="eo.ApsGlobClass" table="aps_glob_class" catalog="school_mgt_db" optimistic-lock="version">
+        <id name="clsid" type="java.lang.Integer">
+            <column name="CLSID" />
+            <generator class="identity" />
+        </id>
+        <property name="clsname" type="string">
+            <column name="CLSNAME" length="300" />
+        </property>
+        <set name="apsAdmAdmsForSibling2Class" table="aps_adm_adm" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SIBLING2_CLASS" />
+            </key>
+            <one-to-many class="eo.ApsAdmAdm" />
+        </set>
+        <set name="apsAdmAdmsForClsid" table="aps_adm_adm" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CLSID" not-null="true" />
+            </key>
+            <one-to-many class="eo.ApsAdmAdm" />
+        </set>
+        <set name="apsAdmAdmsForAdmsForClass" table="aps_adm_adm" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ADMS_FOR_CLASS" />
+            </key>
+            <one-to-many class="eo.ApsAdmAdm" />
+        </set>
+        <set name="apsAdmAdmsForSibling1Class" table="aps_adm_adm" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SIBLING1_CLASS" />
+            </key>
+            <one-to-many class="eo.ApsAdmAdm" />
+        </set>
+    </class>
+</hibernate-mapping>
